@@ -1,0 +1,27 @@
+{
+  "id": "hyprland-submap",
+  "name": "Hyprland Submap",
+  "version": "1.0.0",
+  "minNoctaliaVersion": "4.4.0",
+  "author": "Amateur Hacker",
+  "license": "MIT",
+  "repository": "",
+  "description": "Show the current Hyprland Submap if it isn't default",
+  "tags": [
+    "Bar",
+    "Utility"
+  ],
+  "entryPoints": {
+    "main": "Main.qml",
+    "barWidget": "BarWidget.qml",
+    "settings": "Settings.qml"
+  },
+  "dependencies": {
+    "plugins": []
+  },
+  "metadata": {
+    "defaultSettings": {
+      "icon": "keyboard"
+    }
+  }
+}

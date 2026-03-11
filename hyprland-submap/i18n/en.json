@@ -1,0 +1,9 @@
+{
+  "settings": {
+    "title": "Hyprland Submap",
+    "description": "Shows the current Hyprland submap in the bar when active.",
+    "icon": "Icon",
+    "iconDescription": "Select an icon from library",
+    "browseIcons": "Browse icons"
+  }
+}

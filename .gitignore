@@ -1,0 +1,12 @@
+# Plugin runtime data
+*/settings.json
+
+/registry.json
+
+# OS
+.DS_Store
+*.log
+
+# Editor
+.vscode/
+.idea/
