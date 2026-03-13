@@ -4,7 +4,8 @@ on:
     branches:
       - main
     paths:
-      - "**/manifest.json"
+      - "hyprland-submap/**"
+      - "screen-shot-and-record/**"
       - ".github/workflows/update-registry.js"
   workflow_dispatch:
 
