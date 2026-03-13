@@ -6,4 +6,5 @@ import qs.Commons
 
 Item {
     id: root
+    property var pluginApi: null
 }
