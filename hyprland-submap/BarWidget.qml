@@ -79,6 +79,7 @@ Item {
                 text: root.displayText
                 color: Color.mOnSurface
                 pointSize: barFontSize
+                visible: !root.isBarVertical
             }
         }
     }
