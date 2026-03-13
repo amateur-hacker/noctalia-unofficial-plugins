@@ -6,7 +6,7 @@
   "author": "Amateur Hacker",
   "license": "MIT",
   "repository": "",
-  "description": "Show the current Hyprland Submap if it isn't default",
+  "description": "Shows a capsule when a Hyprland submap is active",
   "tags": [
     "Bar",
     "Utility"
