@@ -49,10 +49,10 @@ Item {
     z: 999
 
     readonly property real contentWidth: {
-        if (root.isBarVertical) {
-            return iconItem.implicitWidth + Style.marginM * 2
-        }
-        return content.implicitWidth + Style.marginM * 2
+      if (root.isBarVertical) {
+        return content.implicitWidth + Style.marginM
+      }
+      return content.implicitWidth + Style.marginM * 2
     }
     readonly property real contentHeight: capsuleHeight
 
@@ -76,7 +76,6 @@ Item {
             spacing: root.isBarVertical ? 0 : Style.marginS
 
             NIcon {
-                id: iconItem
                 icon: root.icon
                 color: Color.mOnSurface
             }
@@ -124,3 +123,4 @@ Item {
         }
     }
 }
+
