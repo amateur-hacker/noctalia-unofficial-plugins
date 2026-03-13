@@ -7,7 +7,7 @@
       "version": "1.0.0",
       "official": false,
       "author": "Amateur Hacker",
-      "description": "Show the current Hyprland Submap if it isn't default",
+      "description": "Shows submap name when a Hyprland submap is active",
       "repository": "",
       "minNoctaliaVersion": "4.4.0",
       "license": "MIT",
@@ -15,7 +15,7 @@
         "Bar",
         "Utility"
       ],
-      "lastUpdated": "2026-03-14T01:01:55+05:30"
+      "lastUpdated": "2026-03-14T01:05:21+05:30"
     },
     {
       "id": "screen-shot-and-record",
