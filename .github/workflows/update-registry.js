@@ -16,18 +16,28 @@ const ROOT_DIR = path.join(__dirname, '..', '..');
 const REGISTRY_PATH = path.join(ROOT_DIR, 'registry.json');
 
 /**
- * Get the last commit date for a file using git
+ * Get the last commit date for any file in a plugin directory
  */
-function getLastCommitDate(filePath) {
+function getLastCommitDate(dirPath) {
   try {
-    const result = execSync(`git log -1 --format=%cI -- "${filePath}"`, {
+    const result = execSync(`git log -1 --format=%cI -- "${dirPath}/*"`, {
       cwd: ROOT_DIR,
       encoding: 'utf8'
     }).trim();
     return result || null;
   } catch (error) {
-    console.warn(`Warning: Could not get last commit date for ${filePath}`);
-    return null;
+    // Fallback to manifest.json
+    try {
+      const manifestPath = path.join(dirPath, 'manifest.json');
+      const result = execSync(`git log -1 --format=%cI -- "${manifestPath}"`, {
+        cwd: ROOT_DIR,
+        encoding: 'utf8'
+      }).trim();
+      return result || null;
+    } catch (e) {
+      console.warn(`Warning: Could not get last commit date for ${dirPath}`);
+      return null;
+    }
   }
 }
 
@@ -70,7 +80,7 @@ function extractRegistryEntry(manifest, dirPath) {
     minNoctaliaVersion: manifest.minNoctaliaVersion,
     license: manifest.license,
     tags: manifest.tags || [],
-    lastUpdated: getLastCommitDate(manifestPath)
+    lastUpdated: getLastCommitDate(dirPath)
   };
 }
 
