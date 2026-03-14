@@ -23,7 +23,7 @@ Item {
     readonly property real capsuleHeight: Style.getCapsuleHeightForScreen(screenName)
     readonly property real barFontSize: Style.getBarFontSizeForScreen(screenName)
 
-    readonly property string icon: cfg.icon ?? defaults.icon ?? "keyboard"
+    readonly property string icon: cfg.icon ?? defaults.icon ?? "key"
 
     property string displayText: ""
     property bool isActive: false
