@@ -6,7 +6,7 @@
   "author": "Amateur Hacker",
   "license": "MIT",
   "repository": "",
-  "description": "Shows submap name when a Hyprland submap is active",
+  "description": "Shows submap name when it's active.",
   "tags": [
     "Bar",
     "Utility"
