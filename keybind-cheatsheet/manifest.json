@@ -1,0 +1,30 @@
+{
+  "id": "keybind-cheatsheet",
+  "name": "Keybind Cheatsheet",
+  "version": "1.0.0",
+  "minNoctaliaVersion": "3.6.0",
+  "author": "Amateur Hacker",
+  "license": "MIT",
+  "description": "Keyboard shortcuts keymap that automatically detects and displays keybindings for Hyprland compositor.",
+  "entryPoints": {
+    "main": "Main.qml",
+    "barWidget": "BarWidget.qml",
+    "panel": "Panel.qml",
+    "settings": "Settings.qml"
+  },
+  "dependencies": {
+    "plugins": []
+  },
+  "metadata": {
+    "defaultSettings": {
+      "cheatsheetData": [],
+      "detectedCompositor": "",
+      "windowWidth": 1400,
+      "windowHeight": 0,
+      "autoHeight": true,
+      "columnCount": 3,
+      "modKeyVariable": "$mod",
+      "hyprlandKeybindConfigPath": "~/.config/hypr/hyprland.conf"
+    }
+  }
+}

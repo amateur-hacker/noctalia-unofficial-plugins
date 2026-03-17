@@ -2,7 +2,7 @@
   "id": "hyprland-submap",
   "name": "Hyprland Submap",
   "version": "1.0.0",
-  "minNoctaliaVersion": "4.4.0",
+  "minNoctaliaVersion": "3.6.0",
   "author": "Amateur Hacker",
   "license": "MIT",
   "repository": "",
