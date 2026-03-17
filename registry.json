@@ -9,13 +9,25 @@
       "author": "Amateur Hacker",
       "description": "Shows submap name when it's active.",
       "repository": "",
-      "minNoctaliaVersion": "4.4.0",
+      "minNoctaliaVersion": "3.6.0",
       "license": "MIT",
       "tags": [
         "Bar",
         "Utility"
       ],
-      "lastUpdated": "2026-03-16T01:41:28+05:30"
+      "lastUpdated": "2026-03-18T03:39:33+05:30"
+    },
+    {
+      "id": "keybind-cheatsheet",
+      "name": "Keybind Cheatsheet",
+      "version": "1.0.0",
+      "official": false,
+      "author": "Amateur Hacker",
+      "description": "Keyboard shortcuts keymap that automatically detects and displays keybindings for Hyprland compositor.",
+      "minNoctaliaVersion": "3.6.0",
+      "license": "MIT",
+      "tags": [],
+      "lastUpdated": "2026-03-18T03:39:33+05:30"
     },
     {
       "id": "screen-shot-and-record",
