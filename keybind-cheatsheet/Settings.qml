@@ -58,16 +58,18 @@ Item {
     visible: false
   }
 
-  // Configuration - reference pluginSettings directly for dynamic updates
-  property var defaults: rootItem.pluginApi?.manifest?.metadata?.defaultSettings || ({})
+  // Configuration
+  property var cfg: pluginApi?.pluginSettings || ({})
+  property var defaults: pluginApi?.manifest?.metadata?.defaultSettings || ({})
 
-  // Settings values - use direct binding to pluginSettings so they update when loaded
-  property int windowWidth: (rootItem.pluginApi?.pluginSettings?.windowWidth ?? defaults.windowWidth ?? 1400)
-  property int windowHeight: (rootItem.pluginApi?.pluginSettings?.windowHeight ?? defaults.windowHeight ?? 0)
-  property bool autoHeight: (rootItem.pluginApi?.pluginSettings?.autoHeight ?? defaults.autoHeight ?? true)
-  property int columnCount: (rootItem.pluginApi?.pluginSettings?.columnCount ?? defaults.columnCount ?? 3)
-  property string modKeyVariable: (rootItem.pluginApi?.pluginSettings?.modKeyVariable || defaults.modKeyVariable || "$mod")
-  property string hyprlandKeybindConfigPath: (rootItem.pluginApi?.pluginSettings?.hyprlandKeybindConfigPath || defaults.hyprlandKeybindConfigPath || "~/.config/hypr/hyprland.conf")
+  // Settings values
+  property int windowWidth: cfg.windowWidth ?? defaults.windowWidth ?? 1400
+  property int windowHeight: cfg.windowHeight ?? defaults.windowHeight ?? 0
+  property bool autoHeight: cfg.autoHeight ?? defaults.autoHeight ?? true
+  property int columnCount: cfg.columnCount ?? defaults.columnCount ?? 3
+  // NOWA ZMIENNA TUTAJ:
+  property string modKeyVariable: cfg.modKeyVariable || defaults.modKeyVariable || "$mod"
+  property string hyprlandKeybindConfigPath: cfg.hyprlandKeybindConfigPath || defaults.hyprlandKeybindConfigPath || "~/.config/hypr/hyprland.conf"
 
 
 
@@ -525,12 +527,8 @@ Item {
   }
   // Save function called by settings dialog
   function saveSettings() {
-    if (!rootItem.pluginApi) return;
-    rootItem.pluginApi.saveSettings();
-    ToastService.showNotice(
-      rootItem.pluginApi?.tr("keybind-cheatsheet.settings.saved") ||
-      "Settings saved successfully."
-    );
+    if (!pluginApi) return;
+    pluginApi.saveSettings();
   }
   }
 }

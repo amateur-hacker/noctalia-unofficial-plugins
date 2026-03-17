@@ -6,4 +6,4 @@ To implement this feature, I used AI (Claude) to better understand how to use IP
 
 ## Example of bar
 
-![The screenshot below shows the bar displaying the active User Apps submap.](assets/screenshot.png)
+![The screenshot below shows the bar displaying the active User Apps submap.](preview.png)
