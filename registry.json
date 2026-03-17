@@ -15,7 +15,7 @@
         "Bar",
         "Utility"
       ],
-      "lastUpdated": "2026-03-18T03:39:33+05:30"
+      "lastUpdated": "2026-03-18T04:10:53+05:30"
     },
     {
       "id": "keybind-cheatsheet",
@@ -27,7 +27,7 @@
       "minNoctaliaVersion": "3.6.0",
       "license": "MIT",
       "tags": [],
-      "lastUpdated": "2026-03-18T03:55:02+05:30"
+      "lastUpdated": "2026-03-18T04:10:53+05:30"
     },
     {
       "id": "screen-shot-and-record",
@@ -45,7 +45,7 @@
         "Utility",
         "Hyprland"
       ],
-      "lastUpdated": "2026-03-11T07:16:56+05:30"
+      "lastUpdated": "2026-03-18T04:10:53+05:30"
     }
   ]
 }
