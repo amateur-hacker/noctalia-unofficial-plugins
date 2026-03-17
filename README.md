@@ -27,4 +27,4 @@ Keyboard shortcuts keymap that automatically detects and displays keybindings fo
 
 ## License
 
-See individual plugin directories for license information.
+MIT
