@@ -1,6 +1,6 @@
 {
-  "id": "keybind-cheatsheet",
-  "name": "Keybind Cheatsheet",
+  "id": "hyprland-keybind-cheatsheet",
+  "name": "Hyprland Keybind Cheatsheet",
   "version": "1.0.0",
   "minNoctaliaVersion": "3.6.0",
   "author": "Amateur Hacker",

@@ -491,42 +491,50 @@ Component {
 
   function distributeCategories() {
     var numCols = root.columnCount;
-
-    // Calculate weights for each category
-    var catData = [];
-    for (var i = 0; i < categories.length; i++) {
-      var weight = 1 + categories[i].binds.length + 1; // header + binds + spacer
-      catData.push({ index: i, weight: weight });
-    }
-
-    // Sort by weight descending (largest categories first for better distribution)
-    catData.sort(function(a, b) { return b.weight - a.weight; });
+    var numCats = categories.length;
+    if (numCats === 0) return [];
 
     var columns = [];
-    var columnWeights = [];
+    var columnStartHeights = [];
     for (var c = 0; c < numCols; c++) {
       columns.push([]);
-      columnWeights.push(0);
+      columnStartHeights.push(0);
     }
 
-    // Assign each category to the column with smallest current weight
-    for (var i = 0; i < catData.length; i++) {
-      var minCol = 0;
-      for (var c = 1; c < numCols; c++) {
-        if (columnWeights[c] < columnWeights[minCol]) {
-          minCol = c;
+    var availableHeight = maxScreenHeight - 45 - 16 - 15 - 15;
+
+    for (var i = 0; i < numCats; i++) {
+      var catHeight = getCategoryHeight(i);
+      var assigned = false;
+
+      for (var col = 0; col < numCols; col++) {
+        var startPoint = columnStartHeights[col];
+
+        if (startPoint <= availableHeight || (col === numCols - 1)) {
+          columns[col].push(i);
+          columnStartHeights[col] += catHeight;
+          assigned = true;
+          break;
         }
       }
-      columns[minCol].push(catData[i].index);
-      columnWeights[minCol] += catData[i].weight;
-    }
 
-    // Sort categories within each column by original order for consistent display
-    for (var c = 0; c < numCols; c++) {
-      columns[c].sort(function(a, b) { return a - b; });
+      if (!assigned) {
+        columns[numCols - 1].push(i);
+      }
     }
 
     return columns;
   }
 
+  function getCategoryHeight(catIndex) {
+    var cat = categories[catIndex];
+    var h = 26;
+    for (var j = 0; j < cat.binds.length; j++) {
+      h += 22;
+    }
+    h += 10;
+    return h;
+  }
+
 }
+
