@@ -18,6 +18,13 @@ Shows the current Hyprland Submap if it isn't default.
 - **Features**: Displays active submap in the bar
 - **Version**: 1.0.0
 
+### Keybind Cheatsheet
+
+Keyboard shortcuts keymap that automatically detects and displays keybindings for Hyprland compositor.
+
+- **Features**: Auto-detect keybindings, displays in a cheatsheet view
+- **Version**: 1.0.0
+
 ## License
 
 See individual plugin directories for license information.

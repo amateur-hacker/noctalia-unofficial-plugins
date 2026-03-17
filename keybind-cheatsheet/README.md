@@ -32,19 +32,25 @@ cp -r keybind-cheatsheet ~/.config/noctalia/plugins/
 ## Usage
 
 ### Bar Widget
+
 Add the plugin to your bar configuration in Noctalia settings. Click the keyboard icon to open the cheatsheet.
 
 ### Global Hotkey
 
 #### Hyprland
+
 Add to your config:
+
 ```bash
 bind = $mod, F1, exec, qs -c noctalia-shell ipc call plugin:keybind-cheatsheet toggle
 ```
+
 You can specify your custom Super key variable (e.g., $mainMod) in the plugin settings.
 
 #### Niri
+
 Add to your config:
+
 ```kdl
 binds {
     Mod+F1 { spawn "qs -c noctalia-shell ipc call plugin:keybind-cheatsheet toggle"; }
@@ -58,6 +64,7 @@ binds {
 The plugin recursively parses your main config and all `source` includes.
 
 **Keybind format:**
+
 ```bash
 # 1. APPLICATIONS
 bind = $mainMod, T, exec, alacritty #"Terminal"
@@ -73,11 +80,13 @@ bind = $mainMod SHIFT, 1, movetoworkspace, 1 #"Move to workspace 1"
 ```
 
 **Requirements:**
+
 - Categories: `# N. CATEGORY NAME` (where N is a number)
 - Descriptions: `#"description"` at end of bind line
 - Modifiers: `$mod`, `SHIFT`, `CTRL`, `ALT`
 
 **Source directives (automatically followed):**
+
 ```bash
 source = ~/.config/hypr/keybinds.conf
 source = ~/.config/hypr/apps/*.conf
@@ -88,6 +97,7 @@ source = ~/.config/hypr/apps/*.conf
 The plugin parses the `binds { }` block and follows all `include` directives.
 
 **Keybind format:**
+
 ```kdl
 binds {
     // #"Applications"
@@ -105,11 +115,13 @@ binds {
 ```
 
 **Requirements:**
+
 - Categories: `// #"Category Name"` (must use this exact format)
 - Descriptions: `hotkey-overlay-title="description"` attribute
 - Without descriptions, actions are auto-categorized by type
 
 **Include directives (automatically followed):**
+
 ```kdl
 include "~/.config/niri/binds.kdl"
 ```
@@ -179,7 +191,3 @@ The plugin follows `source` (Hyprland) and `include` (Niri) directives automatic
 
 - Noctalia Shell 4.1.0+
 - Hyprland or Niri compositor
-
-## License
-
-MIT
