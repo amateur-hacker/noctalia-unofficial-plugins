@@ -58,18 +58,16 @@ Item {
     visible: false
   }
 
-  // Configuration
-  property var cfg: rootItem.pluginApi?.pluginSettings || ({})
+  // Configuration - reference pluginSettings directly for dynamic updates
   property var defaults: rootItem.pluginApi?.manifest?.metadata?.defaultSettings || ({})
 
-  // Settings values
-  property int windowWidth: cfg.windowWidth ?? defaults.windowWidth ?? 1400
-  property int windowHeight: cfg.windowHeight ?? defaults.windowHeight ?? 0
-  property bool autoHeight: cfg.autoHeight ?? defaults.autoHeight ?? true
-  property int columnCount: cfg.columnCount ?? defaults.columnCount ?? 3
-  // NOWA ZMIENNA TUTAJ:
-  property string modKeyVariable: cfg.modKeyVariable || defaults.modKeyVariable || "$mod"
-  property string hyprlandKeybindConfigPath: cfg.hyprlandKeybindConfigPath || defaults.hyprlandKeybindConfigPath || "~/.config/hypr/hyprland.conf"
+  // Settings values - use direct binding to pluginSettings so they update when loaded
+  property int windowWidth: (rootItem.pluginApi?.pluginSettings?.windowWidth ?? defaults.windowWidth ?? 1400)
+  property int windowHeight: (rootItem.pluginApi?.pluginSettings?.windowHeight ?? defaults.windowHeight ?? 0)
+  property bool autoHeight: (rootItem.pluginApi?.pluginSettings?.autoHeight ?? defaults.autoHeight ?? true)
+  property int columnCount: (rootItem.pluginApi?.pluginSettings?.columnCount ?? defaults.columnCount ?? 3)
+  property string modKeyVariable: (rootItem.pluginApi?.pluginSettings?.modKeyVariable || defaults.modKeyVariable || "$mod")
+  property string hyprlandKeybindConfigPath: (rootItem.pluginApi?.pluginSettings?.hyprlandKeybindConfigPath || defaults.hyprlandKeybindConfigPath || "~/.config/hypr/hyprland.conf")
 
 
 
