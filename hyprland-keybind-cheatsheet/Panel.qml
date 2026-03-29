@@ -189,9 +189,9 @@ Component {
         NText {
           text: {
             if (CompositorService.isHyprland) {
-              return "Hyprland Keymap";
+              return pluginApi?.tr("keybind-cheatsheet.panel.title-hyprland") || "Hyprland Keybinds";
             } else {
-              return "Keymap";
+              return pluginApi?.tr("keybind-cheatsheet.panel.title") || "Keybinds";;
             }
           }
           font.pointSize: Style.fontSizeM
