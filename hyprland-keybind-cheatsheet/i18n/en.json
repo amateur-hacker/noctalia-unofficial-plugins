@@ -8,8 +8,8 @@
     },
     "panel": {
       "loading": "Loading...",
-      "title": "Keymap",
-      "title-hyprland": "Hyprland Keymap",
+      "title": "Keybinds",
+      "title-hyprland": "Hyprland Keybinds",
       "workspace-switching": "WORKSPACES - SWITCHING",
       "workspace-moving": "WORKSPACES - MOVING",
       "workspace-mouse": "WORKSPACES - MOUSE"
