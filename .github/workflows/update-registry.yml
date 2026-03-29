@@ -6,7 +6,7 @@ on:
     paths:
       - "hyprland-submap/**"
       - "screen-shot-and-record/**"
-      - "keybind-cheatsheet/**"
+      - "hyprland-keybind-cheatsheet/**"
       - ".github/workflows/update-registry.js"
       - ".github/workflows/update-registry.yml"
   workflow_dispatch:
